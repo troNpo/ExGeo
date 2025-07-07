@@ -55,4 +55,4 @@ Desarrollado por **@troNpo**
 
 ## 🌐 Enlace en vivo
 
-https://tronpo.github.io/ExGeo/
+https://troNpo.github.io/ExGeo/
