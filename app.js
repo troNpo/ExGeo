@@ -1,15 +1,18 @@
 function convertir() {
   const input = document.getElementById('mapsUrl').value.trim();
 
+  // Elimina todos los espacios para facilitar el análisis
+  const cleaned = input.replace(/\s+/g, '');
+
   const patterns = [
     /@([-.\d]+),([-.\d]+)/,                      // Google Maps con @lat,lon
     /q=([-.\d]+),([-.\d]+)/,                     // Google Maps con q=lat,lon
     /^geo:([-.\d]+),([-.\d]+)(?:,[-.\d]+)?$/,    // geo:lat,lon
-    /^([-.\d]+)[,\s]+([-.\d]+)$/                 // lat lon separados por coma, espacio o tab
+    /^([-.\d]+)[,\s]+([-.\d]+)$/                 // lat lon separados por coma o espacio
   ];
 
   for (const pattern of patterns) {
-    const match = input.match(pattern);
+    const match = cleaned.match(pattern);
     if (match) {
       return abrirEnOrux(match[1], match[2]);
     }
