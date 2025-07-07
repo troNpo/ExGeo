@@ -31,7 +31,7 @@
 ---
 
 ## 📦 Instalación como app (PWA)
-
+(en desarrollo , actualmente deshabilitado)
 1. Abre ExGeo desde tu navegador móvil
 2. Pulsa el icono de menú (⋮) y selecciona **“Instalar app”**
 3. Se añadirá a tu pantalla de inicio como una app nativa
