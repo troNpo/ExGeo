@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-color: #f0f4f8;
+  background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Fondo azul degradado */
   margin: 0;
   padding: 0;
   display: flex;
@@ -13,8 +13,8 @@ body {
   text-align: center;
   padding: 2rem;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   max-width: 400px;
   width: 90%;
 }
@@ -28,6 +28,7 @@ body {
 .subtitle {
   font-size: 1rem;
   margin-bottom: 1.5rem;
+  color: #333;
 }
 
 input {
@@ -47,6 +48,7 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
