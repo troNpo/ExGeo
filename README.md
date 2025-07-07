@@ -1,6 +1,6 @@
 # 📍 ExGeo
 
-**ExGeo** es una herramienta web ligera que convierte coordenadas o enlaces de Google Maps en accesos directos para abrir ubicaciones directamente en **OruxMaps GP **.
+**ExGeo** es una herramienta web ligera que convierte coordenadas o enlaces de Google Maps en accesos directos para abrir ubicaciones directamente en **OruxMaps**.
 
 ---
 
