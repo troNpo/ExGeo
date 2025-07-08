@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./icon-512.png" alt="ExGeo Logo" width="128" height="128">
+</p>
+
 # 📍 ExGeo
 
 **ExGeo** es una herramienta web ligera que convierte coordenadas o enlaces de Google Maps en accesos directos para abrir ubicaciones directamente en **OruxMaps**.
@@ -31,7 +35,9 @@
 ---
 
 ## 📦 Instalación como app (PWA)
-(en desarrollo , actualmente deshabilitado)
+
+_(En desarrollo, actualmente deshabilitado)_
+
 1. Abre ExGeo desde tu navegador móvil
 2. Pulsa el icono de menú (⋮) y selecciona **“Instalar app”**
 3. Se añadirá a tu pantalla de inicio como una app nativa
@@ -49,10 +55,12 @@
 ## 🧑‍💻 Autor
 
 Desarrollado por **@troNpo**  
-©troNpo — Todos los derechos reservados
+©troNpilot — Todos los derechos reservados
+
+Contribución de [**Copilot**](https://play.google.com/store/apps/details?id=com.microsoft.copilot) 🤖
 
 ---
 
 ## 🌐 Enlace en vivo
 
-https://troNpo.github.io/ExGeo/
+👉 [https://troNpo.github.io/ExGeo/](https://troNpo.github.io/ExGeo/)
