@@ -1,32 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ExGeo</title>
-
-  <!-- Manifest desactivado temporalmente -->
-  <!-- <link rel="manifest" href="manifest.json"> -->
-
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/open-location-code@1.0.3/openlocationcode.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="icon-512.png" alt="ExGeo logo" class="logo">
-    <p class="subtitle">📌 Introduce coordenadas directamente o pega un enlace de Google Maps o <code>geo:</code> — ExGeo las abrirá en OruxMaps.</p>
-    <input type="text" id="mapsUrl" placeholder="Pega aquí el enlace o coordenadas">
-    <button onclick="convertir()">Abrir en OruxMaps GP </button>
-    <footer class="footer">©troNpilot</footer>
+
+  <!-- Barra superior -->
+  <header class="top-bar">
+    <button class="menu-button" onclick="toggleMenu()">
+      <img src="./icons/menu.png" alt="Menú" />
+    </button>
+  </header>
+
+  <!-- Menú lateral -->
+<nav id="menuLateral" class="menu-lateral">
+  <ul>
+  <li>
+    <button onclick="mostrarTutorial()" class="icon-button">
+      <img src="./icons/información.png" alt="Información" /> Cómo usar ExGeo
+    </button>
+  </li>
+  <li>
+    <button onclick="descargarGPX()" class="icon-button">
+      <img src="./icons/exportar.png" alt="Exportar GPX" /> GPX
+    </button>
+  </li>
+  <li>
+    <button onclick="mostrarHistorial()" class="icon-button">
+      <img src="./icons/historial.png" alt="Historial" /> Historial
+    </button>
+  </li>
+  
+</ul>
+<div id="panelHistorial" class="panel-historial" style="display: none;">
+  <div class="historial-cabecera">
+    <strong>Historial</strong>
+    <button class="cerrar-historial" onclick="cerrarHistorial()">✖</button>
   </div>
+  <ul id="listaHistorial" class="lista-historial"></ul>
+  <button onclick="borrarHistorial()" class="icon-button borrar-historial">
+  🗑️ Borrar historial
+</button>
+</div>
+</nav>
 
-  <script src="app.js"></script>
+  <!-- Contenido principal -->
+  <main class="container">
+    <img src="./icon-512.png" alt="Logo" class="logo" />
+    <h2 class="subtitle">Convierte coordenadas o enlaces de Google Maps para OruxMaps</h2>
 
-  <!-- Service Worker sigue activo, pero puedes comentarlo también si quieres -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-  </script>
+   <input type="text" id="mapsUrl" placeholder="Ej: https://maps.google.com/?q=37.7749,-122.4194" />
+
+<div class="botones-principales">
+  <button onclick="convertir()">Abrir en OruxMaps GP</button>
+  <button onclick="validarEntrada()" class="icon-button">
+    <img src="./icons/historial.png" alt="Guardar coordenadas" /> Validar y guardar
+  </button>
+</div>
+
+  <div id="tutorialExGeo" class="aviso" style="display: none;">
+  <div class="aviso-cabecera">
+    <strong>Cómo usar ExGeo</strong>
+    <button class="cerrar-aviso" onclick="cerrarAviso(this)">✖</button>
+  </div>
+  <p>📍 <strong>ExGeo</strong> te permite convertir coordenadas o enlaces de Google Maps en archivos GPX compatibles con OruxMaps.</p>
+
+  <h4>🧭 ¿Cómo obtener coordenadas?</h4>
+  <ol>
+    <li>Abre Google Maps y mantén pulsado sobre el punto deseado.</li>
+    <li>Verás un pin rojo con las coordenadas arriba.</li>
+    <li>Toca las coordenadas para copiarlas.</li>
+    <li>Pégalas en el campo de búsqueda de ExGeo.</li>
+  </ol>
+
+  <h4>🔄 ¿Qué formatos acepta?</h4>
+  <ul>
+    <li>Coordenadas simples: <code>37.7749, -122.4194</code></li>
+    <li>Enlaces de Google Maps: <code>https://maps.google.com/?q=37.7749,-122.4194</code></li>
+    <li>geo: URIs: <code>geo:37.7749,-122.4194</code></li>
+  </ul>
+
+  <h4>📤 ¿Cómo exportar?</h4>
+  <ol>
+    <li>Pega las coordenadas o enlace y pulsa <strong>“Abrir en OruxMaps GP”</strong>.</li>
+    <li>Verás un aviso con las coordenadas detectadas.</li>
+    <li>Pulsa <strong>“Validar y guardar”</strong> para añadirlas al historial.</li>
+    <li>Luego puedes exportarlas como archivo <strong>GPX</strong>.</li>
+  </ol>
+
+  <h4>📚 Historial de ubicaciones</h4>
+  <ul>
+    <li>Accede desde el menú lateral con el botón <strong>“Historial”</strong> 🕘</li>
+    <li>Verás una lista de ubicaciones guardadas con nombre y coordenadas.</li>
+    <li>Puedes volver a <strong>descargar el GPX</strong> o <strong>abrir en OruxMaps</strong>.</li>
+    <li>También puedes <strong>borrar el historial</strong> desde ese panel.</li>
+    <li>El historial se guarda automáticamente en tu navegador.</li>
+  </ul>
+
+ <p>✨ ExGeo funciona directamente desde tu navegador, sin necesidad de instalación.</p>
+</div>
+
+    <div class="footer">©troNpilot 2025</div>
+  </main>
+
+  <script src="./app.js"></script>
 </body>
 </html>
